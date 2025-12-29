@@ -1,0 +1,14 @@
+name: Vigilnz Scan Test
+on: 
+  workflow_dispatch: # lets you run manually from the Actions tab
+
+jobs:
+  Vigilnz_Scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Vigilnz Scan
+        uses: vigilnz/vigilnz-scan-action@v1
+        with:
+          vigilnzApiKey: "${{ secrets.VIGILNZ_API_KEY }}"
+          scanTypes: "sca,sbom,sast"
