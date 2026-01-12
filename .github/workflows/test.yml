@@ -11,4 +11,4 @@ jobs:
         uses: vigilnz/vigilnz-scan-action@v1
         with:
           vigilnzApiKey: "${{ secrets.VIGILNZ_API_KEY }}"
-          scanTypes: "sca,sbom,sast"
+          scanTypes: "sca,sbom,SAST,iac scan,SECRET SCAN"
