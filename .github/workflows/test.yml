@@ -12,3 +12,5 @@ jobs:
         with:
           vigilnzApiKey: "${{ secrets.VIGILNZ_API_KEY }}"
           scanTypes: "sca,sbom,SAST,iac scan,SECRET SCAN"
+          environment: "dev"
+          projectName: "Next"
