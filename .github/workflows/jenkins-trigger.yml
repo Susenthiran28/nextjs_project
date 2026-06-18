@@ -1,0 +1,13 @@
+name: Jenkins Trigger Test
+on: 
+  workflow_dispatch: # lets you run manually from the Actions tab
+
+jobs:
+  Jenkins_Trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trigger Jenkins Tests
+        run: |
+          curl -X POST https://devjen.vigilnz.com/job/Vigilnz%20Freestyle%20Job/build \
+            --user ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_API_TOKEN }}
