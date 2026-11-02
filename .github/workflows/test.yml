@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run Vigilnz Scan
+        id: vigilnz
         uses: vigilnz/vigilnz-scan-action@master
         with:
           vigilnzApiKey: "${{ secrets.VIGILNZ_API_KEY }}"
@@ -16,3 +17,11 @@ jobs:
           projectName: "Next"
           waitForCompletion: true
           # failOnSeverity: "critical"
+      - name: Write results to file
+        run: echo '${{ steps.vigilnz.outputs.resultsJson }}' > vigilnz-results.json
+      
+      - name: Upload results artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vigilnz-scan-results
+          path: vigilnz-results.json
