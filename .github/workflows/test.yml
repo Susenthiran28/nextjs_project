@@ -14,3 +14,5 @@ jobs:
           scanTypes: "sca,sbom,sast,iac,secret"
           # environment: "dev"
           projectName: "Next"
+          waitForCompletion: true
+          failOnSeverity: "critical"
