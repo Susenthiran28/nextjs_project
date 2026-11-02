@@ -11,6 +11,6 @@ jobs:
         uses: vigilnz/vigilnz-scan-action@master
         with:
           vigilnzApiKey: "${{ secrets.VIGILNZ_API_KEY }}"
-          scanTypes: "sca,sbom,SAST,iac scan,SECRET SCAN"
-          environment: "dev"
+          scanTypes: "sca,sbom,sast,iac,secret"
+          # environment: "dev"
           projectName: "Next"
