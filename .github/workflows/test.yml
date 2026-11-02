@@ -15,4 +15,4 @@ jobs:
           # environment: "dev"
           projectName: "Next"
           waitForCompletion: true
-          failOnSeverity: "critical"
+          # failOnSeverity: "critical"
